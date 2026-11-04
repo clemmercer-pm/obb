@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operation Bilingual Baby</title>
+  <meta name="description" content="A jyutping-first Cantonese spaced-repetition app.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐸</text></svg>">
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+  <main class="app">
+    <header class="masthead">
+      <h1 class="logo">Operation Bilingual Baby</h1>
+      <p class="tagline">Jyutping first. Characters for backup. No pressure.</p>
+      <p class="counter" id="counter"></p>
+    </header>
+
+    <section id="app" class="card-area">
+      <p class="category" id="category"></p>
+      <p class="prompt" id="prompt"></p>
+
+      <button type="button" id="showBtn" class="show-btn">Show answer</button>
+
+      <div id="answer" class="answer" hidden></div>
+
+      <button type="button" id="audioBtn" class="audio-btn" hidden title="Audio comes in a later session">🔊 Play</button>
+
+      <div id="ratingBar" class="rating-bar" hidden>
+        <button type="button" data-quality="1" class="rate rate-again">Again</button>
+        <button type="button" data-quality="3" class="rate rate-hard">Hard</button>
+        <button type="button" data-quality="4" class="rate rate-good">Good</button>
+        <button type="button" data-quality="5" class="rate rate-easy">Easy</button>
+      </div>
+    </section>
+
+    <p id="empty" class="empty" hidden></p>
+  </main>
+
+  <script src="data.js?v=1"></script>
+  <script src="app.js?v=1"></script>
+</body>
+</html>

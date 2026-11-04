@@ -1,0 +1,122 @@
+:root {
+  --bg: #fafaf7;
+  --ink: #1f2420;
+  --muted: #6b7268;
+  --card: #ffffff;
+  --accent: #2f6b4f;
+  --again: #c0493f;
+  --hard: #c98a2b;
+  --good: #3a7a4e;
+  --easy: #2f6b4f;
+  --border: #e3e2db;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px 20px 48px;
+}
+
+.masthead { text-align: center; margin-bottom: 24px; }
+
+.logo { font-size: 1.4rem; margin: 0 0 4px; }
+
+.tagline { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+.counter { margin: 8px 0 0; font-size: 0.8rem; color: var(--muted); }
+
+.card-area {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.category {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.prompt {
+  font-size: 1.6rem;
+  margin: 0 0 24px;
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-btn, .audio-btn {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.show-btn { width: 100%; }
+
+.answer { margin: 20px 0; }
+
+.jyutping { font-size: 1.5rem; font-weight: 600; }
+
+.characters { font-size: 1.8rem; color: var(--muted); margin-top: 6px; }
+
+.audio-btn { margin-bottom: 20px; }
+
+.rating-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.rating-bar[hidden] { display: none; }
+
+.rate {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 4px;
+  font-size: 0.85rem;
+  color: white;
+  cursor: pointer;
+}
+
+.rate-again { background: var(--again); }
+.rate-hard  { background: var(--hard); }
+.rate-good  { background: var(--good); }
+.rate-easy  { background: var(--easy); }
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 40px;
+  font-size: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15180f;
+    --ink: #eef0e8;
+    --muted: #9aa294;
+    --card: #1f231a;
+    --border: #2d3225;
+  }
+}
