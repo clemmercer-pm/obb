@@ -98,7 +98,7 @@
     el.answer.hidden = !revealed;
     el.answer.innerHTML = `
       <div class="jyutping">${current.jyutping}</div>
-      <div class="characters">${current.characters}</div>
+      ${current.characters ? `<div class="characters">${current.characters}</div>` : ''}
     `;
     el.showBtn.hidden = revealed;
     el.ratingBar.hidden = !revealed;
