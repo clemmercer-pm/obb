@@ -37,19 +37,19 @@ const CARDS = [
   { id: 'town-fire',         category: 'Going into town', english: 'fire station',    jyutping: 'siu1 fong1 guk2' },
   { id: 'town-pharmacy',     category: 'Going into town', english: 'pharmacy',        jyutping: 'joek6 fong4' },
 
-  // --- Family ---
-  { id: 'family-mum',          category: 'Family', english: 'mum',                          jyutping: 'maa4 maa1',   characters: '媽媽' },
-  { id: 'family-dad',          category: 'Family', english: 'dad',                          jyutping: 'baa4 baa1',   characters: '爸爸' },
-  { id: 'family-grandma-mat',  category: 'Family', english: "grandma (mum's mum)",          jyutping: 'po4 po2',     characters: '婆婆' },
-  { id: 'family-grandpa-mat',  category: 'Family', english: "grandpa (mum's dad)",          jyutping: 'gung1 gung1', characters: '公公' },
-  { id: 'family-grandma-pat',  category: 'Family', english: "grandma (dad's mum)",          jyutping: 'maa4 maa4',   characters: '嫲嫲' },
-  { id: 'family-grandpa-pat',  category: 'Family', english: "grandpa (dad's dad)",          jyutping: 'je4 je4',     characters: '爺爺' },
-  { id: 'family-uncle-older',  category: 'Family', english: "uncle (dad's older brother)",  jyutping: 'baak3 baak3', characters: '伯伯' },
-  { id: 'family-aunt-by-marriage-1', category: 'Family', english: 'aunt (his wife)',        jyutping: 'baak3 mou5',  characters: '伯母' },
-  { id: 'family-aunt-younger', category: 'Family', english: "aunt (dad's younger sister)",  jyutping: 'gu1 ze1',     characters: '姑姐' },
-  { id: 'family-uncle-by-marriage-1', category: 'Family', english: 'uncle (her husband)',   jyutping: 'gu1 zoeng6',  characters: '姑丈' },
-  { id: 'family-uncle-maternal', category: 'Family', english: "uncle (mum's brother)",      jyutping: 'kau5 fu6',    characters: '舅父' },
-  { id: 'family-aunt-by-marriage-2', category: 'Family', english: 'aunt (his wife)',        jyutping: 'kau5 mou5',   characters: '舅母' },
+  // --- Family (audio generated 2026-11-05, zh-HK-HiuMaanNeural) ---
+  { id: 'family-mum',          category: 'Family', english: 'mum',                          jyutping: 'maa4 maa1',   characters: '媽媽', audio: 'audio/family-mum.mp3' },
+  { id: 'family-dad',          category: 'Family', english: 'dad',                          jyutping: 'baa4 baa1',   characters: '爸爸', audio: 'audio/family-dad.mp3' },
+  { id: 'family-grandma-mat',  category: 'Family', english: "grandma (mum's mum)",          jyutping: 'po4 po2',     characters: '婆婆', audio: 'audio/family-grandma-mat.mp3' },
+  { id: 'family-grandpa-mat',  category: 'Family', english: "grandpa (mum's dad)",          jyutping: 'gung1 gung1', characters: '公公', audio: 'audio/family-grandpa-mat.mp3' },
+  { id: 'family-grandma-pat',  category: 'Family', english: "grandma (dad's mum)",          jyutping: 'maa4 maa4',   characters: '嫲嫲', audio: 'audio/family-grandma-pat.mp3' },
+  { id: 'family-grandpa-pat',  category: 'Family', english: "grandpa (dad's dad)",          jyutping: 'je4 je4',     characters: '爺爺', audio: 'audio/family-grandpa-pat.mp3' },
+  { id: 'family-uncle-older',  category: 'Family', english: "uncle (dad's older brother)",  jyutping: 'baak3 baak3', characters: '伯伯', audio: 'audio/family-uncle-older.mp3' },
+  { id: 'family-aunt-by-marriage-1', category: 'Family', english: 'aunt (his wife)',        jyutping: 'baak3 mou5',  characters: '伯母', audio: 'audio/family-aunt-by-marriage-1.mp3' },
+  { id: 'family-aunt-younger', category: 'Family', english: "aunt (dad's younger sister)",  jyutping: 'gu1 ze1',     characters: '姑姐', audio: 'audio/family-aunt-younger.mp3' },
+  { id: 'family-uncle-by-marriage-1', category: 'Family', english: 'uncle (her husband)',   jyutping: 'gu1 zoeng6',  characters: '姑丈', audio: 'audio/family-uncle-by-marriage-1.mp3' },
+  { id: 'family-uncle-maternal', category: 'Family', english: "uncle (mum's brother)",      jyutping: 'kau5 fu6',    characters: '舅父', audio: 'audio/family-uncle-maternal.mp3' },
+  { id: 'family-aunt-by-marriage-2', category: 'Family', english: 'aunt (his wife)',        jyutping: 'kau5 mou5',   characters: '舅母', audio: 'audio/family-aunt-by-marriage-2.mp3' },
 
   // --- Talking to baby ---
   { id: 'baby-milk',   category: 'Talking to baby', english: 'milk', jyutping: 'naai5' },

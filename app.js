@@ -110,8 +110,15 @@
     render();
   });
 
+  let audioEl = null;
   el.audioBtn.addEventListener('click', () => {
-    el.audioBtn.title = 'Audio comes in a later session (Azure TTS)';
+    if (!current || !current.audio) {
+      el.audioBtn.title = 'No audio for this card yet';
+      return;
+    }
+    if (!audioEl) audioEl = new Audio();
+    audioEl.src = current.audio;
+    audioEl.play().catch(() => { el.audioBtn.title = 'Could not play audio'; });
   });
 
   el.ratingBar.addEventListener('click', (e) => {
