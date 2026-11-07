@@ -6,7 +6,7 @@
   <title>Operation Bilingual Baby</title>
   <meta name="description" content="A jyutping-first Cantonese spaced-repetition app.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐸</text></svg>">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <main class="app">
@@ -18,6 +18,7 @@
     <nav class="tabs" id="tabs">
       <button type="button" class="tab is-active" data-view="review">Review</button>
       <button type="button" class="tab" data-view="storytime">Storytime</button>
+      <button type="button" class="tab" data-view="translate">Translate</button>
     </nav>
 
     <!-- Review view -->
@@ -55,20 +56,35 @@
         <button type="button" id="playPassage" class="show-btn">🔊 Play whole thing</button>
         <div id="passageLines" class="passage-lines"></div>
       </div>
+    </section>
 
-      <div id="wordPopover" class="word-popover" hidden>
-        <button type="button" id="closePopover" class="popover-close" aria-label="Close">&times;</button>
-        <div class="popover-jyutping" id="popoverJyutping"></div>
-        <div class="popover-characters" id="popoverCharacters"></div>
-        <div class="popover-english" id="popoverEnglish"></div>
-        <button type="button" id="addToDeckBtn" class="add-btn">+ Add to my deck</button>
+    <!-- Translate & Learn view -->
+    <section id="view-translate" class="view" hidden>
+      <p class="translate-hint">Type an English word or sentence.</p>
+      <div class="translate-bar">
+        <input type="text" id="translateInput" class="translate-input" placeholder="e.g. have you done your piano?">
+        <button type="button" id="translateBtn" class="show-btn translate-btn">Translate</button>
       </div>
+      <div id="translateStatus" class="translate-status"></div>
+      <div id="translateResult" class="passage-lines"></div>
     </section>
   </main>
 
+  <!-- Shared word popover, used by Storytime and Translate & Learn -->
+  <div id="wordPopover" class="word-popover" hidden>
+    <button type="button" id="closePopover" class="popover-close" aria-label="Close">&times;</button>
+    <div class="popover-jyutping" id="popoverJyutping"></div>
+    <div class="popover-characters" id="popoverCharacters"></div>
+    <div class="popover-english" id="popoverEnglish"></div>
+    <button type="button" id="addToDeckBtn" class="add-btn">+ Add to my deck</button>
+  </div>
+
   <script src="data.js?v=1"></script>
   <script src="storytime-data.js?v=1"></script>
-  <script src="storytime.js?v=1"></script>
+  <script src="cc-canto.js?v=1"></script>
+  <script src="word-popover.js?v=1"></script>
+  <script src="storytime.js?v=2"></script>
+  <script src="translate.js?v=1"></script>
   <script src="nav.js?v=1"></script>
   <script src="app.js?v=2"></script>
 </body>
