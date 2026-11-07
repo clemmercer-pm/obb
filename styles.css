@@ -111,6 +111,155 @@ body {
   font-size: 1rem;
 }
 
+/* --- Tabs --- */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 8px 4px 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* --- Storytime: list --- */
+.storytime-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.storytime-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.storytime-type {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.storytime-title { font-size: 1.05rem; }
+
+/* --- Storytime: passage --- */
+.back-btn {
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-size: 0.9rem;
+  padding: 0 0 12px;
+  cursor: pointer;
+}
+
+.passage-title { font-size: 1.2rem; margin: 0 0 16px; }
+
+#playPassage { margin-bottom: 20px; }
+
+.passage-line {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.line-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.word-chip {
+  border: none;
+  background: none;
+  color: var(--ink);
+  font-size: inherit;
+  font-family: inherit;
+  padding: 2px 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.word-chip:hover, .word-chip:focus {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.line-jyutping { font-size: 0.9rem; color: var(--muted); }
+.line-english { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+
+/* --- Word popover --- */
+.word-popover {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 380px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.popover-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.popover-jyutping { font-size: 1.2rem; font-weight: 600; }
+.popover-characters { font-size: 1.5rem; color: var(--muted); margin-top: 4px; }
+.popover-english { font-size: 0.95rem; margin: 8px 0 16px; }
+
+.add-btn {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #15180f;

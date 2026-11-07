@@ -50,7 +50,8 @@
   // --- state ---
   const progress = loadProgress();
   const today = todayISO();
-  let queue = shuffle(CARDS.filter(c => !progress[c.id] || progress[c.id].due <= today));
+  const allCards = CARDS.concat(window.OBB_customCards || []);
+  let queue = shuffle(allCards.filter(c => !progress[c.id] || progress[c.id].due <= today));
   let current = null;
   let revealed = false;
   let sessionDone = 0;
