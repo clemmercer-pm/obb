@@ -51,18 +51,85 @@ const CARDS = [
   { id: 'family-uncle-maternal', category: 'Family', english: "uncle (mum's brother)",      jyutping: 'kau5 fu6',    characters: '舅父', audio: 'audio/family-uncle-maternal.mp3' },
   { id: 'family-aunt-by-marriage-2', category: 'Family', english: 'aunt (his wife)',        jyutping: 'kau5 mou5',   characters: '舅母', audio: 'audio/family-aunt-by-marriage-2.mp3' },
 
-  // --- Talking to baby ---
-  { id: 'baby-milk',   category: 'Talking to baby', english: 'milk', jyutping: 'naai5',          characters: '奶' },
-  { id: 'baby-bath',   category: 'Talking to baby', english: 'bath', jyutping: 'cung1 loeng4',   characters: '沖涼' },
-  { id: 'colour-black',  category: 'Talking to baby', english: 'black',  jyutping: 'hak1 sik1',  characters: '黑色' },
-  { id: 'colour-white',  category: 'Talking to baby', english: 'white',  jyutping: 'baak6 sik1', characters: '白色' },
-  { id: 'colour-red',    category: 'Talking to baby', english: 'red',    jyutping: 'hung4 sik1', characters: '紅色' },
-  { id: 'colour-orange', category: 'Talking to baby', english: 'orange', jyutping: 'caang2 sik1', characters: '橙色' },
-  { id: 'colour-yellow', category: 'Talking to baby', english: 'yellow', jyutping: 'wong4 sik1', characters: '黃色' },
-  { id: 'colour-green',  category: 'Talking to baby', english: 'green',  jyutping: 'luk6 sik1',  characters: '綠色' },
-  { id: 'colour-blue',   category: 'Talking to baby', english: 'blue',   jyutping: 'laam4 sik1', characters: '藍色' },
-  { id: 'colour-purple', category: 'Talking to baby', english: 'purple', jyutping: 'zi2 sik1',   characters: '紫色' },
-  { id: 'colour-brown',  category: 'Talking to baby', english: 'brown',  jyutping: 'gaa3 fe1 sik1', characters: '咖啡色' },
+  // --- Baby fundamentals (renamed from "Talking to baby" 2026-11-07, expanded per MacArthur-Bates CDI categories) ---
+  { id: 'baby-milk',   category: 'Baby fundamentals', english: 'milk', jyutping: 'naai5',          characters: '奶' },
+  { id: 'baby-bath',   category: 'Baby fundamentals', english: 'bath', jyutping: 'cung1 loeng4',   characters: '沖涼' },
+  { id: 'baby-eat',    category: 'Baby fundamentals', english: 'eat',  jyutping: 'sik6 faan6',     characters: '食飯' },
+  { id: 'baby-sleep',  category: 'Baby fundamentals', english: 'sleep', jyutping: 'fan3 gaau3',    characters: '瞓覺' },
+  { id: 'colour-black',  category: 'Baby fundamentals', english: 'black',  jyutping: 'hak1 sik1',  characters: '黑色' },
+  { id: 'colour-white',  category: 'Baby fundamentals', english: 'white',  jyutping: 'baak6 sik1', characters: '白色' },
+  { id: 'colour-red',    category: 'Baby fundamentals', english: 'red',    jyutping: 'hung4 sik1', characters: '紅色' },
+  { id: 'colour-orange', category: 'Baby fundamentals', english: 'orange', jyutping: 'caang2 sik1', characters: '橙色' },
+  { id: 'colour-yellow', category: 'Baby fundamentals', english: 'yellow', jyutping: 'wong4 sik1', characters: '黃色' },
+  { id: 'colour-green',  category: 'Baby fundamentals', english: 'green',  jyutping: 'luk6 sik1',  characters: '綠色' },
+  { id: 'colour-blue',   category: 'Baby fundamentals', english: 'blue',   jyutping: 'laam4 sik1', characters: '藍色' },
+  { id: 'colour-purple', category: 'Baby fundamentals', english: 'purple', jyutping: 'zi2 sik1',   characters: '紫色' },
+  { id: 'colour-brown',  category: 'Baby fundamentals', english: 'brown',  jyutping: 'gaa3 fe1 sik1', characters: '咖啡色' },
+
+  // --- Baby fundamentals: numbers (CSV) ---
+  { id: 'num-1',  category: 'Baby fundamentals', english: 'one',   jyutping: 'jat1',  characters: '一' },
+  { id: 'num-2',  category: 'Baby fundamentals', english: 'two',   jyutping: 'ji6',   characters: '二' },
+  { id: 'num-3',  category: 'Baby fundamentals', english: 'three', jyutping: 'saam1', characters: '三' },
+  { id: 'num-4',  category: 'Baby fundamentals', english: 'four',  jyutping: 'sei3',  characters: '四' },
+  { id: 'num-5',  category: 'Baby fundamentals', english: 'five',  jyutping: 'ng5',   characters: '五' },
+  { id: 'num-6',  category: 'Baby fundamentals', english: 'six',   jyutping: 'luk6',  characters: '六' },
+  { id: 'num-7',  category: 'Baby fundamentals', english: 'seven', jyutping: 'cat1',  characters: '七' },
+  { id: 'num-8',  category: 'Baby fundamentals', english: 'eight', jyutping: 'baat3', characters: '八' },
+  { id: 'num-9',  category: 'Baby fundamentals', english: 'nine',  jyutping: 'gau2',  characters: '九' },
+  { id: 'num-10', category: 'Baby fundamentals', english: 'ten',   jyutping: 'sap6',  characters: '十' },
+
+  // --- Baby fundamentals: directions/spatial (mostly CSV) ---
+  { id: 'dir-up',    category: 'Baby fundamentals', english: 'up',           jyutping: 'soeng6 min6', characters: '上便' },
+  { id: 'dir-down',  category: 'Baby fundamentals', english: 'down',         jyutping: 'haa6 min6',   characters: '下便' },
+  { id: 'dir-in',    category: 'Baby fundamentals', english: 'in / inside',  jyutping: 'leoi5 min6',  characters: '入便' },
+  { id: 'dir-out',   category: 'Baby fundamentals', english: 'out / outside', jyutping: 'ngoi5 min6', characters: '出便' },
+  { id: 'dir-here',  category: 'Baby fundamentals', english: 'here',         jyutping: 'ni1 dou6',    characters: '呢度' },
+  { id: 'dir-there', category: 'Baby fundamentals', english: 'there',       jyutping: 'go2 dou6',    characters: '嗰度' },
+
+  // --- Baby fundamentals: action words (CSV) ---
+  { id: 'action-come', category: 'Baby fundamentals', english: 'come', jyutping: 'lei4',    characters: '嚟' },
+  { id: 'action-go',   category: 'Baby fundamentals', english: 'go',   jyutping: 'heoi3',   characters: '去' },
+  { id: 'action-stop', category: 'Baby fundamentals', english: 'stop', jyutping: 'ting4',   characters: '停' },
+  { id: 'action-give', category: 'Baby fundamentals', english: 'give', jyutping: 'bei2',    characters: '俾' },
+  { id: 'action-more', category: 'Baby fundamentals', english: 'more', jyutping: 'do1 di1', characters: '多啲' },
+
+  // --- Baby fundamentals: social/routine words (fresh) ---
+  { id: 'social-hello',  category: 'Baby fundamentals', english: 'hello',  jyutping: 'nei5 hou2',  characters: '你好' },
+  { id: 'social-byebye', category: 'Baby fundamentals', english: 'bye-bye', jyutping: 'baai1 baai3', characters: '拜拜' },
+  { id: 'social-mgoi',   category: 'Baby fundamentals', english: 'please / thanks (for a favour)', jyutping: 'm4 goi1', characters: '唔該' },
+  { id: 'social-dohze',  category: 'Baby fundamentals', english: 'thank you (for a gift)', jyutping: 'do1 ze6', characters: '多謝' },
+  { id: 'social-yes',    category: 'Baby fundamentals', english: 'yes',    jyutping: 'hai6',    characters: '係' },
+  { id: 'social-no',     category: 'Baby fundamentals', english: "no / don't", jyutping: 'm4 hou2', characters: '唔好' },
+
+  // --- Baby fundamentals: descriptive words (CSV) ---
+  { id: 'desc-big',    category: 'Baby fundamentals', english: 'big',    jyutping: 'daai6',    characters: '大' },
+  { id: 'desc-small',  category: 'Baby fundamentals', english: 'small',  jyutping: 'sai3',     characters: '細' },
+  { id: 'desc-hot',    category: 'Baby fundamentals', english: 'hot',    jyutping: 'jit6',     characters: '熱' },
+  { id: 'desc-cold',   category: 'Baby fundamentals', english: 'cold',   jyutping: 'dung3',    characters: '凍' },
+  { id: 'desc-hungry', category: 'Baby fundamentals', english: 'hungry', jyutping: 'tou5 ngo6', characters: '肚餓' },
+  { id: 'desc-tired',  category: 'Baby fundamentals', english: 'tired',  jyutping: 'gui6',     characters: '攰' },
+
+  // --- Baby fundamentals: body parts (CSV, clean subset) ---
+  { id: 'body-head',  category: 'Baby fundamentals', english: 'head',  jyutping: 'tau4',        characters: '頭' },
+  { id: 'body-hand',  category: 'Baby fundamentals', english: 'hand',  jyutping: 'sau2',        characters: '手' },
+  { id: 'body-foot',  category: 'Baby fundamentals', english: 'foot',  jyutping: 'geot3',       characters: '腳' },
+  { id: 'body-eyes',  category: 'Baby fundamentals', english: 'eyes',  jyutping: 'ngaan5 zing1', characters: '眼睛' },
+  { id: 'body-nose',  category: 'Baby fundamentals', english: 'nose',  jyutping: 'bei6 go1',    characters: '鼻哥' },
+  { id: 'body-mouth', category: 'Baby fundamentals', english: 'mouth', jyutping: 'hau2',        characters: '口' },
+  { id: 'body-ears',  category: 'Baby fundamentals', english: 'ears',  jyutping: 'ji3 zai2',    characters: '耳仔' },
+  { id: 'body-tummy', category: 'Baby fundamentals', english: 'tummy', jyutping: 'tou5',        characters: '肚' },
+
+  // --- Baby fundamentals: animals (fresh, not in CSV at all) ---
+  { id: 'animal-dog',    category: 'Baby fundamentals', english: 'dog (homophone of "nine" - 九 gau2, different character)', jyutping: 'gau2',   characters: '狗' },
+  { id: 'animal-cat',    category: 'Baby fundamentals', english: 'cat',    jyutping: 'maau1',    characters: '貓' },
+  { id: 'animal-bird',   category: 'Baby fundamentals', english: 'bird',   jyutping: 'zoek2 zai2', characters: '雀仔' },
+  { id: 'animal-fish',   category: 'Baby fundamentals', english: 'fish',   jyutping: 'jyu2',     characters: '魚' },
+  { id: 'animal-duck',   category: 'Baby fundamentals', english: 'duck',   jyutping: 'aap2',     characters: '鴨' },
+  { id: 'animal-cow',    category: 'Baby fundamentals', english: 'cow',    jyutping: 'ngau4',    characters: '牛' },
+  { id: 'animal-pig',    category: 'Baby fundamentals', english: 'pig',    jyutping: 'zyu1',     characters: '豬' },
+  { id: 'animal-horse',  category: 'Baby fundamentals', english: 'horse',  jyutping: 'maa5',     characters: '馬' },
+  { id: 'animal-sheep',  category: 'Baby fundamentals', english: 'sheep',  jyutping: 'joeng4',   characters: '羊' },
+  { id: 'animal-rabbit', category: 'Baby fundamentals', english: 'rabbit', jyutping: 'tou3',     characters: '兔' },
 
   // --- Dim sum / food ---
   { id: 'food-congee',       category: 'Dim sum / food', english: 'congee',                       jyutping: 'zuk1',           characters: '粥' },
