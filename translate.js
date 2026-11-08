@@ -1,12 +1,12 @@
-/* OBB - Translate & Learn. English sentence -> (not yet wired up: Google
-   Cloud Translation via a Cloudflare Worker, per SPEC.md) -> Cantonese
+/* OBB - Translate & Learn. English sentence -> Cloudflare Worker (proxies
+   Google Cloud Translation, keeps the API key server-side) -> Cantonese
    characters -> segmented via CC-Canto -> tappable words, same popover as
-   Storytime. The translation call itself is stubbed until Clem has a
-   Google Cloud + Cloudflare account - everything downstream of that call
-   (segmentation, word tap, add-to-deck) is real and tested now. */
+   Storytime. */
 
 (function () {
   'use strict';
+
+  const WORKER_URL = 'https://obb-translate.clem-mercer128.workers.dev';
 
   const el = {
     input: document.getElementById('translateInput'),
@@ -15,11 +15,15 @@
     result: document.getElementById('translateResult'),
   };
 
-  // Stub - replace with a real call to the Cloudflare Worker once Clem has
-  // a Google Cloud Translation key + Cloudflare account set up (see SPEC.md
-  // "Translate & Learn" architecture note).
   async function translateText(english) {
-    throw new Error('Not connected yet - needs the Google Translate + Cloudflare Worker setup (see SPEC.md).');
+    const resp = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: english }),
+    });
+    const data = await resp.json();
+    if (!resp.ok || data.error) throw new Error(data.error || 'Translation failed');
+    return data.translated;
   }
 
   async function handleTranslate() {
