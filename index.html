@@ -6,55 +6,53 @@
   <title>Operation Bilingual Baby</title>
   <meta name="description" content="A jyutping-first Cantonese spaced-repetition app.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐸</text></svg>">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <main class="app">
     <header class="masthead">
       <h1 class="logo">Operation Bilingual Baby</h1>
-      <p class="tagline">Jyutping first. Characters for backup. No pressure.</p>
     </header>
-
-    <nav class="tabs" id="tabs">
-      <button type="button" class="tab is-active" data-view="review">Review</button>
-      <button type="button" class="tab" data-view="storytime">Storytime</button>
-      <button type="button" class="tab" data-view="translate">Translate</button>
-    </nav>
 
     <!-- Review view -->
     <section id="view-review" class="view">
-      <p class="counter" id="counter"></p>
+      <div class="subnav" id="reviewSubnav">
+        <button type="button" class="subnav-btn is-active" data-mode="browse">Browse</button>
+        <button type="button" class="subnav-btn" data-mode="practice">Practice</button>
+      </div>
 
-      <section id="app" class="card-area">
-        <p class="category" id="category"></p>
-        <p class="prompt" id="prompt"></p>
+      <div id="browseMode" class="browse-mode">
+        <div id="categoryList" class="category-list"></div>
 
-        <button type="button" id="showBtn" class="show-btn">Show answer</button>
-
-        <div id="answer" class="answer" hidden></div>
-
-        <button type="button" id="audioBtn" class="audio-btn" hidden title="Play audio">🔊 Play</button>
-
-        <div id="ratingBar" class="rating-bar" hidden>
-          <button type="button" data-quality="1" class="rate rate-again">Again</button>
-          <button type="button" data-quality="3" class="rate rate-hard">Hard</button>
-          <button type="button" data-quality="4" class="rate rate-good">Good</button>
-          <button type="button" data-quality="5" class="rate rate-easy">Easy</button>
+        <div id="categoryDetail" class="category-detail" hidden>
+          <button type="button" id="backToCategories" class="back-btn">&larr; All categories</button>
+          <h2 id="categoryDetailTitle" class="passage-title"></h2>
+          <div id="categoryCards" class="category-cards"></div>
         </div>
-      </section>
+      </div>
 
-      <p id="empty" class="empty" hidden></p>
-    </section>
+      <div id="practiceMode" class="practice-mode" hidden>
+        <p class="counter" id="counter"></p>
 
-    <!-- Storytime view -->
-    <section id="view-storytime" class="view" hidden>
-      <div id="storytimeList" class="storytime-list"></div>
+        <section id="app" class="card-area">
+          <p class="category" id="category"></p>
+          <p class="prompt" id="prompt"></p>
 
-      <div id="storytimePassage" class="storytime-passage" hidden>
-        <button type="button" id="backToList" class="back-btn">&larr; All storytime</button>
-        <h2 id="passageTitle" class="passage-title"></h2>
-        <button type="button" id="playPassage" class="show-btn">🔊 Play whole thing</button>
-        <div id="passageLines" class="passage-lines"></div>
+          <button type="button" id="showBtn" class="show-btn">Show answer</button>
+
+          <div id="answer" class="answer" hidden></div>
+
+          <button type="button" id="audioBtn" class="audio-btn" hidden title="Play audio">🔊 Play</button>
+
+          <div id="ratingBar" class="rating-bar" hidden>
+            <button type="button" data-quality="1" class="rate rate-again">Again</button>
+            <button type="button" data-quality="3" class="rate rate-hard">Hard</button>
+            <button type="button" data-quality="4" class="rate rate-good">Good</button>
+            <button type="button" data-quality="5" class="rate rate-easy">Easy</button>
+          </div>
+        </section>
+
+        <p id="empty" class="empty" hidden></p>
       </div>
     </section>
 
@@ -68,7 +66,26 @@
       <div id="translateStatus" class="translate-status"></div>
       <div id="translateResult" class="passage-lines"></div>
     </section>
+
+    <!-- Storytime view -->
+    <section id="view-storytime" class="view" hidden>
+      <div id="storytimeList" class="storytime-list"></div>
+
+      <div id="storytimePassage" class="storytime-passage" hidden>
+        <button type="button" id="backToList" class="back-btn">&larr; All storytime</button>
+        <h2 id="passageTitle" class="passage-title"></h2>
+        <button type="button" id="playPassage" class="show-btn">🔊 Play whole thing</button>
+        <div id="passageLines" class="passage-lines"></div>
+      </div>
+    </section>
   </main>
+
+  <!-- Bottom tab bar -->
+  <nav class="tabs tabs-bottom" id="tabs">
+    <button type="button" class="tab is-active" data-view="review"><span class="tab-icon">📇</span>Review</button>
+    <button type="button" class="tab" data-view="translate"><span class="tab-icon">🔤</span>Translate</button>
+    <button type="button" class="tab" data-view="storytime"><span class="tab-icon">📖</span>Storytime</button>
+  </nav>
 
   <!-- Shared word popover, used by Storytime and Translate & Learn -->
   <div id="wordPopover" class="word-popover" hidden>
@@ -85,7 +102,8 @@
   <script src="word-popover.js?v=1"></script>
   <script src="storytime.js?v=2"></script>
   <script src="translate.js?v=1"></script>
-  <script src="nav.js?v=1"></script>
+  <script src="browse.js?v=1"></script>
+  <script src="nav.js?v=2"></script>
   <script src="app.js?v=2"></script>
 </body>
 </html>
