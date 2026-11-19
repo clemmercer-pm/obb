@@ -389,6 +389,8 @@ body {
 
 .translate-input {
   flex: 1;
+  min-width: 0; /* flex items default to min-width:auto, which stops this shrinking below its
+                   intrinsic content width and pushes the button off-screen on narrow phones */
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 10px 14px;
